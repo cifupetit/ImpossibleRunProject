@@ -16,6 +16,7 @@ public class CarController : MonoBehaviour {
     public float maxFuerzaMotor;
 
     public float freno;
+    public float fuerzaFrenado;
     public bool estoyFrenando;
 
     public Vector3 posCentroDeMasas;    //posición del centro de masas del vehículo
@@ -28,6 +29,7 @@ public class CarController : MonoBehaviour {
         maxGiroRuedas = 25.0f;
         fuerzaMotor = 0.0f;
         maxFuerzaMotor = 800.0f;
+        fuerzaFrenado = 600.0f;
         estoyFrenando = false;
         posCentroDeMasas = new Vector3(0.0f, 0.0f, 0.0f);
 
@@ -39,7 +41,7 @@ public class CarController : MonoBehaviour {
         fuerzaMotor = maxFuerzaMotor * Input.GetAxis("Vertical");
         giroRuedas = maxGiroRuedas * Input.GetAxis("Horizontal");
         
-        if (Input.GetButton("Jump"))
+        if (Input.GetButton("Jump")) //Input.GetKey(KeyCode.Space)
         {
             estoyFrenando = true;
         }
@@ -61,10 +63,10 @@ public class CarController : MonoBehaviour {
         //fuerza de frenado
         if (estoyFrenando)
         {
-            ruedaDelDer.brakeTorque = 400.0f;
-            ruedaDelIzq.brakeTorque = 400.0f;
-            ruedaTraDer.brakeTorque = 400.0f;
-            ruedaTraIzq.brakeTorque = 400.0f;
+            ruedaDelDer.brakeTorque = fuerzaFrenado;
+            ruedaDelIzq.brakeTorque = fuerzaFrenado;
+            ruedaTraDer.brakeTorque = fuerzaFrenado;
+            ruedaTraIzq.brakeTorque = fuerzaFrenado;
         }
         else
         {

@@ -18,6 +18,7 @@ public class SceneChange : MonoBehaviour {
 
     public void CargaEscena (string nombreEscena)
     {
+        //Application.LoadLevel(nombreEscena);
         SceneManager.LoadScene(nombreEscena);
     }
 }

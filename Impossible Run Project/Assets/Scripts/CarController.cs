@@ -29,7 +29,7 @@ public class CarController : MonoBehaviour {
         maxGiroRuedas = 25.0f;
         fuerzaMotor = 0.0f;
         maxFuerzaMotor = 800.0f;
-        fuerzaFrenado = 600.0f;
+        fuerzaFrenado = 1500.0f;
         estoyFrenando = false;
         posCentroDeMasas = new Vector3(0.0f, 0.0f, 0.0f);
 

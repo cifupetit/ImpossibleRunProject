@@ -20,9 +20,10 @@ public class SceneChangeNombre : MonoBehaviour {
     public void CargaEscenaNombre(string nombreEscena)
     {
         InputField inputFiled = inputFieldNombre.GetComponent<InputField>();
-        Debug.Log(inputFiled.text);
-        DatosPartida.partida.nombreJ = inputFiled.text;
-        DatosPartida.partida.nivel = 1;
+        //Debug.Log(inputFiled.text);
+        DatosPartida.SetNombreJPartida(inputFiled.text);
+        DatosPartida.SetNivelPartida(1);
+        //DatosPartida.partida = new DatosPartida(inputFiled.text, 1);
 
         SceneManager.LoadScene(nombreEscena);
     }

@@ -22,13 +22,6 @@ public class CarController : MonoBehaviour {
     public float fuerzaDerrape;
     public bool estoyDerrapando;
 
-    private float friccionHaciaDelante;  //para el deslice de las ruedas al derrapar
-    private float friccionLateral;
-    private float friccionHaciaDelanteDerrape;
-    private float friccionLateralDerrape;
-
-    private float friccionActual;
-
     public Vector3 posCentroDeMasas;    //posición del centro de masas del vehículo
     public Vector3 posicionRueda;   //tanto posición como rotación servirán para posicionar el
     public Quaternion rotacionRueda;//GameObject que posee el WheelCollider en el centro del modelo de rueda
@@ -38,19 +31,11 @@ public class CarController : MonoBehaviour {
         giroRuedas = 0.0f;
         maxGiroRuedas = 25.0f;
         fuerzaMotor = 0.0f;
-        maxFuerzaMotor = 800.0f;
+        maxFuerzaMotor = 1800.0f;
         fuerzaFrenado = 2000.0f;
         estoyFrenando = false;
         fuerzaDerrape = 1000.0f;
         estoyDerrapando = false;
-
-        //friccionHaciaDelante = ruedaTraDer.forwardFriction.stiffness;
-        //friccionLateral = ruedaTraDer.sidewaysFriction.stiffness;
-
-        //friccionActual = ruedaTraDer.sidewaysFriction.stiffness;
-
-        //friccionHaciaDelanteDerrape = 0.04f;
-        //friccionLateralDerrape = 0.01f;
 
         posCentroDeMasas = new Vector3(0.0f, 0.0f, 0.0f);
 
@@ -141,7 +126,7 @@ public class CarController : MonoBehaviour {
         ruedaTI.transform.rotation = rotacionRueda;
     }
 
-    void SetFriccionDerrape (float friccionHaciaDelante, float friccionLateral)
+    void SetFriccionDerrape (float friccionHaciaDelante, float friccionLateral) //de esta manera ya que no nos deja modificar directente los valores de friccion de los wheelcolliders
     {
         WheelFrictionCurve frictionCurveTraDer1;
         frictionCurveTraDer1 = ruedaTraDer.forwardFriction;

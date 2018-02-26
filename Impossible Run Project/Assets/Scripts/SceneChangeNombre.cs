@@ -24,6 +24,8 @@ public class SceneChangeNombre : MonoBehaviour {
         DatosPartida.SetNombreJPartida(inputFiled.text);
         DatosPartida.SetNivelPartida(1);
         //DatosPartida.partida = new DatosPartida(inputFiled.text, 1);
+        //DatosPartida.nombreJ = inputFiled.text;
+        //DatosPartida.partida.nivel = 1;
 
         SceneManager.LoadScene(nombreEscena);
     }

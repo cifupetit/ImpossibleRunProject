@@ -6,7 +6,10 @@ public class GuardaCierra : MonoBehaviour {
 
 	public void GuardaDatosCierraApp ()
     {
-        CargaGuardado.Guarda();
+        if (DatosPartida.GetNombreJPartida() != null) //para evitar machacar los datos del archivo si no llega a cargar la partida o crear una nueva antes de salir
+        {
+            CargaGuardado.Guarda();
+        }
         Application.Quit();
     }
 }

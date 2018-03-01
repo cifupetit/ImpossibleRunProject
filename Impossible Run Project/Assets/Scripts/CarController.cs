@@ -32,7 +32,7 @@ public class CarController : MonoBehaviour {
         maxGiroRuedas = 25.0f;
         fuerzaMotor = 0.0f;
         maxFuerzaMotor = 1800.0f;
-        fuerzaFrenado = 2000.0f;
+        fuerzaFrenado = 4000.0f;
         estoyFrenando = false;
         fuerzaDerrape = 1000.0f;
         estoyDerrapando = false;

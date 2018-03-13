@@ -3,22 +3,24 @@ using UnityEngine.UI;
 
 public class CuentaAtras : MonoBehaviour {
 
+    public Text textoDerrota;
     public Text cronometro;
 
     private float tiempo;
     private bool debeDisminuir;
 
-    private Button pausa;
+    public Button pausa;
 
     //public int cuentaAtras;
     //public bool auxCuentaAtras;
 
     // Use this for initialization
-    void Start()
+    public void Start()
     {
         tiempo = 20.0f;
         debeDisminuir = true;
-        pausa = GameObject.Find("Button_Reanudar").GetComponent<Button>();
+        //pausa = GameObject.Find("Button_Reanudar").GetComponent<Button>();
+        textoDerrota.enabled = false;
     }
 
     // Update is called once per frame
@@ -31,9 +33,10 @@ public class CuentaAtras : MonoBehaviour {
 
             if (tiempo <= 0.0f)  // Comprueba si es menor o igual a cero.
             {
-                debeDisminuir = false; // Deja de descontar y activa el menu de pausa.
+                debeDisminuir = false; // Deja de descontar, activa el menu de pausa y muestra el texto de derrota.
                 pausa.onClick.Invoke();
                 pausa.enabled = false;
+                textoDerrota.enabled = true;
             }
         }
 

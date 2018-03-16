@@ -17,7 +17,28 @@ public class CuentaAtras : MonoBehaviour {
     // Use this for initialization
     public void Start()
     {
-        tiempo = 20.0f;
+        int auxNivel = DatosPartida.GetNivelPartida();
+        //Debug.Log(auxNivel);
+        switch (auxNivel)
+        {
+            case 1:
+                tiempo = 30.0f;
+                break;
+
+            case 2:
+                tiempo = 20.0f;
+                break;
+
+            case 3:
+                tiempo = 10.0f;
+                break;
+
+            case 4:
+                tiempo = 5.0f;
+                break;
+        }
+        //tiempo = 20.0f;
+
         debeDisminuir = true;
         //pausa = GameObject.Find("Button_Reanudar").GetComponent<Button>();
         textoDerrota.enabled = false;

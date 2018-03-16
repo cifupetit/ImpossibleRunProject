@@ -60,7 +60,8 @@ public static class DatosPartida {//: MonoBehaviour{
 
     public static int GetNivelPartida()
     {
-        return nivel;
+        //return nivel;
+        return int.Parse(resultado[1]);
     }
 
     public static void ActualizaDatos()

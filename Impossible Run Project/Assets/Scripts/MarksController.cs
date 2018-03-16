@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class MarksController : MonoBehaviour {
 
@@ -11,8 +12,15 @@ public class MarksController : MonoBehaviour {
     public GameObject mark04;
     public GameObject mark05;
     public GameObject mark06;
+    public GameObject mark07;
+    public GameObject mark08;
+    public GameObject mark09;
+    public GameObject mark10;
+    public GameObject mark11;
     public int markTracker;
     public CuentaAtras cuentaAtras;
+
+    public Text nivelJugador;
 
     // Use this for initialization
     void Start () {
@@ -45,6 +53,26 @@ public class MarksController : MonoBehaviour {
         {
             theMarker.transform.position = mark06.transform.position;
         }
+        if (markTracker == 6)
+        {
+            theMarker.transform.position = mark07.transform.position;
+        }
+        if (markTracker == 7)
+        {
+            theMarker.transform.position = mark08.transform.position;
+        }
+        if (markTracker == 8)
+        {
+            theMarker.transform.position = mark09.transform.position;
+        }
+        if (markTracker == 9)
+        {
+            theMarker.transform.position = mark10.transform.position;
+        }
+        if (markTracker == 10)
+        {
+            theMarker.transform.position = mark11.transform.position;
+        }
     }
 
     IEnumerator OnTriggerEnter(Collider collision)
@@ -54,9 +82,11 @@ public class MarksController : MonoBehaviour {
             this.GetComponent<BoxCollider>().enabled = false;
             markTracker++;
             cuentaAtras.Start();
-            if (markTracker == 6)
+            if (markTracker == 11)
             {
                 markTracker = 0;
+                DatosPartida.SetNivelPartida(DatosPartida.GetNivelPartida() + 1);
+                nivelJugador.text = "Nivel " + DatosPartida.GetNivelPartida().ToString();
             }
             yield return new WaitForSeconds(1);
             this.GetComponent<BoxCollider>().enabled = true;

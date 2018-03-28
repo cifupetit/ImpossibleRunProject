@@ -5,6 +5,9 @@ using UnityEngine;
 
 public class CarController : MonoBehaviour {
 
+    public AudioSource sonidoMotor;
+    private float pitch = 0.20f;
+
     public WheelCollider ruedaDelDer;
     public WheelCollider ruedaDelIzq;
     public WheelCollider ruedaTraDer;
@@ -26,12 +29,15 @@ public class CarController : MonoBehaviour {
     public Vector3 posicionRueda;   //tanto posición como rotación servirán para posicionar el
     public Quaternion rotacionRueda;//GameObject que posee el WheelCollider en el centro del modelo de rueda
 
+    public Light luzTraIzq;
+    public Light luzTraDer;
+
 	// Use this for initialization
 	void Start () {
         giroRuedas = 0.0f;
         maxGiroRuedas = 25.0f;
         fuerzaMotor = 0.0f;
-        maxFuerzaMotor = 1800.0f;
+        maxFuerzaMotor = 2500.0f;
         fuerzaFrenado = 4000.0f;
         estoyFrenando = false;
         fuerzaDerrape = 1000.0f;
@@ -44,6 +50,15 @@ public class CarController : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+        if (fuerzaMotor != 0)
+        {
+            pitch = fuerzaMotor / maxFuerzaMotor;
+        } else if (pitch < 0.20)
+        {
+            pitch = 0.20f;
+        }
+        sonidoMotor.pitch = pitch;
+
         fuerzaMotor = maxFuerzaMotor * Input.GetAxis("Vertical");
         giroRuedas = maxGiroRuedas * Input.GetAxis("Horizontal");
         
@@ -82,6 +97,8 @@ public class CarController : MonoBehaviour {
             ruedaDelIzq.brakeTorque = fuerzaFrenado;
             ruedaTraDer.brakeTorque = fuerzaFrenado;
             ruedaTraIzq.brakeTorque = fuerzaFrenado;
+            luzTraDer.intensity = 7;
+            luzTraIzq.intensity = 7;
         }
         else
         {
@@ -89,6 +106,8 @@ public class CarController : MonoBehaviour {
             ruedaDelIzq.brakeTorque = 0.0f;
             ruedaTraDer.brakeTorque = 0.0f;
             ruedaTraIzq.brakeTorque = 0.0f;
+            luzTraDer.intensity = 1.7f;
+            luzTraIzq.intensity = 1.7f;
         }
 
         if (estoyDerrapando)

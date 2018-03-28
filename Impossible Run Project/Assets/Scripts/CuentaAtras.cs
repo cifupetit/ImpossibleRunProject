@@ -22,18 +22,26 @@ public class CuentaAtras : MonoBehaviour {
         switch (auxNivel)
         {
             case 1:
-                tiempo = 30.0f;
+                tiempo = 35.0f;
                 break;
 
             case 2:
-                tiempo = 20.0f;
+                tiempo = 25.0f;
                 break;
 
             case 3:
-                tiempo = 10.0f;
+                tiempo = 20.0f;
                 break;
 
             case 4:
+                tiempo = 15.0f;
+                break;
+
+            case 5:
+                tiempo = 10.0f;
+                break;
+
+            case 6:
                 tiempo = 5.0f;
                 break;
         }
@@ -55,8 +63,8 @@ public class CuentaAtras : MonoBehaviour {
             if (tiempo <= 0.0f)  // Comprueba si es menor o igual a cero.
             {
                 debeDisminuir = false; // Deja de descontar, activa el menu de pausa y muestra el texto de derrota.
-                pausa.onClick.Invoke();
-                pausa.enabled = false;
+                //pausa.onClick.Invoke();
+                //pausa.enabled = false;
                 textoDerrota.enabled = true;
             }
         }

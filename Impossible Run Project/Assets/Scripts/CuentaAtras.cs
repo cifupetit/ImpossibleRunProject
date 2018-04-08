@@ -63,8 +63,8 @@ public class CuentaAtras : MonoBehaviour {
             if (tiempo <= 0.0f)  // Comprueba si es menor o igual a cero.
             {
                 debeDisminuir = false; // Deja de descontar, activa el menu de pausa y muestra el texto de derrota.
-                //pausa.onClick.Invoke();
-                //pausa.enabled = false;
+                pausa.onClick.Invoke();
+                pausa.enabled = false;
                 textoDerrota.enabled = true;
             }
         }

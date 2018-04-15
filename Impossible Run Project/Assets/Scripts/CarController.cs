@@ -32,6 +32,8 @@ public class CarController : MonoBehaviour {
     public Light luzTraIzq;
     public Light luzTraDer;
 
+    public GameObject lastMarker;
+
 	// Use this for initialization
 	void Start () {
         giroRuedas = 0.0f;
@@ -78,6 +80,16 @@ public class CarController : MonoBehaviour {
         else
         {
             estoyDerrapando = false;
+        }
+
+        if (Input.GetKey(KeyCode.R))
+        {
+            this.transform.position = lastMarker.transform.position;
+            this.transform.Translate(0.0f, 0.0f, 0.0f);
+            //this.
+            fuerzaMotor = 0.0f;
+            giroRuedas = 0.0f;
+            rotacionRueda = new Quaternion(0.0f, 0.0f, 0.0f, 0.0f);
         }
 
         //asignamos el giro a las ruedas delanteras

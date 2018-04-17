@@ -126,16 +126,16 @@ public class MarksController : MonoBehaviour {
         if (markTracker == 16)
         {
             lastMarker.transform.position = mark16.transform.position;
-            //theMarker.transform.position = mark17.transform.position;
+            theMarker.transform.position = mark17.transform.position;
         }
         if (markTracker == 17)
         {
-            lastMarker.transform.position = mark17.transform.position;
-            //theMarker.transform.position = mark18.transform.position;
+            //lastMarker.transform.position = mark17.transform.position;
+            theMarker.transform.position = mark18.transform.position;
         }
         if (markTracker == 18)
         {
-            lastMarker.transform.position = mark18.transform.position;
+            //lastMarker.transform.position = mark18.transform.position;
             theMarker.transform.position = mark19.transform.position;
         }
         if (markTracker == 19)

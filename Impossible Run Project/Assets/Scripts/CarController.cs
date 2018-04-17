@@ -85,10 +85,15 @@ public class CarController : MonoBehaviour {
         if (Input.GetKey(KeyCode.R))
         {
             this.transform.position = lastMarker.transform.position;
-            this.transform.Translate(0.0f, 0.0f, 0.0f);
-            //this.
+            
+            //reseteamos las constraints del componente Rigidbody del coche , congelandolas y volviendole a asignar las que tenía para hacer que el GameObject pierda la inercia de movimiento
+            RigidbodyConstraints auxConstraints = this.GetComponent<Rigidbody>().constraints;
+            this.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeAll;
+            this.GetComponent<Rigidbody>().constraints = auxConstraints;
+
+            //dejamos el eje x y z de la rotacion del componente transform del objeto para ponerlo plano al suelo
+            this.transform.rotation = new Quaternion(0.0f, this.transform.rotation.y, 0.0f, this.transform.rotation.w);
             fuerzaMotor = 0.0f;
-            giroRuedas = 0.0f;
             rotacionRueda = new Quaternion(0.0f, 0.0f, 0.0f, 0.0f);
         }
 

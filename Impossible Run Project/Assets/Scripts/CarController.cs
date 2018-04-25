@@ -181,26 +181,5 @@ public class CarController : MonoBehaviour {
         frictionCurveTraIzq2 = ruedaTraIzq.sidewaysFriction;
         frictionCurveTraIzq2.extremumSlip = friccionLateral;
         ruedaTraIzq.sidewaysFriction = frictionCurveTraIzq2;
-        
-
-        /*WheelFrictionCurve frictionCurveDelDer;
-        frictionCurveDelDer = ruedaDelDer.sidewaysFriction;
-        frictionCurveDelDer.extremumSlip = friccion;
-        ruedaDelDer.sidewaysFriction = frictionCurveDelDer;
-
-        WheelFrictionCurve frictionCurveDelIzq;
-        frictionCurveDelIzq = ruedaDelIzq.sidewaysFriction;
-        frictionCurveDelIzq.extremumSlip = friccion;
-        ruedaDelIzq.sidewaysFriction = frictionCurveDelIzq;*/
-
-        /*ruedaTraDer.forwardFriction.stiffness = friccionHaciaDelante;
-        ruedaTraIzq.forwardFriction.stiffness = friccionHaciaDelante;
-        ruedaDelDer.forwardFriction.stiffness = friccionHaciaDelante;
-        ruedaDelIzq.forwardFriction.stiffness = friccionHaciaDelante;
-
-        ruedaTraDer.sidewaysFriction.stiffness = friccionLateral;
-        ruedaTraIzq.sidewaysFriction.stiffness = friccionLateral;
-        ruedaDelDer.sidewaysFriction.stiffness = friccionLateral;
-        ruedaDelIzq.sidewaysFriction.stiffness = friccionLateral;*/
     }
 }

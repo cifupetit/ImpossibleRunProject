@@ -1,79 +1,35 @@
 ﻿using System.Collections;
 using UnityEngine;
-using UnityEngine.UI;
 
 [System.Serializable]
-public static class DatosPartida {//: MonoBehaviour{
-
-    //public static DatosPartida partida;
-    private static string nombreJ;
-    private static int nivel;
-    private static string[] resultado = { nombreJ, nivel.ToString() };
-
-    /*void Awake()
-    {
-        if (partida == null)
-        {
-            DontDestroyOnLoad(gameObject);
-        }
-        else if (partida != this)
-        {
-            Destroy(gameObject);
-        }
-    }
-
-    public DatosPartida ()
-    {
-        //partida = new DatosPartida();
-        partida.nombreJ = "";
-        partida.nivel = 1;
-    }
-
-    public DatosPartida (string nombre, int nivel)
-    {
-        //partida = new DatosPartida();
-        partida.nombreJ = nombre;
-        partida.nivel = nivel;
-        Debug.Log(partida.nombreJ + "    " + partida.nivel);
-    }*/
+public static class DatosPartida {
+    //primera posicion  del array nombre de jugador y segunda nivel
+    private static string[] resultado = new string[2];
 
     public static void SetNombreJPartida(string nombre)
     {
-        nombreJ = nombre;
         resultado[0] = nombre;
-
-        //textoNombre = GameObject.Find("NombreJugador").GetComponent<Text>();
-
-        //textoNombre.text = nombre;
     }
 
     public static string GetNombreJPartida()
     {
-        return nombreJ;
+        return resultado[0];
     }
 
-    public static void SetNivelPartida(int nivel)
+    public static void SetNivelPartida(string auxNivel)
     {
-        nivel = nivel;
-        resultado[1] = nivel.ToString();
+        resultado[1] = auxNivel;
     }
 
-    public static int GetNivelPartida()
+    public static string GetNivelPartida()
     {
-        //return nivel;
-        return int.Parse(resultado[1]);
-    }
-
-    public static void ActualizaDatos()
-    {
-        nombreJ = resultado[0];
-        nivel = int.Parse(resultado[1]);
+        return resultado[1];
     }
 
     public static void CargaDatos(string[] datos)
     {
         DatosPartida.SetNombreJPartida(datos[0]);
-        DatosPartida.SetNivelPartida(int.Parse(datos[1]));
+        DatosPartida.SetNivelPartida(datos[1]);
     }
 
     public static string[] GetResultado()

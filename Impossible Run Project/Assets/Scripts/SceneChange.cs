@@ -6,19 +6,17 @@ using UnityEngine.SceneManagement;
 
 public class SceneChange : MonoBehaviour {
 
-	// Use this for initialization
-	void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
-
     public void CargaEscena (string nombreEscena)
     {
-        //Application.LoadLevel(nombreEscena);
+        SceneManager.LoadScene(nombreEscena);
+    }
+
+    public void CargaDatosCargaEscena(string nombreEscena)
+    {
+        if (DatosPartida.GetNombreJPartida() == null) //para no machacar los datos del jugador si estos ya estan cargados y se vuelve a pasar por el menu principal
+        {
+            CargaGuardado.Carga();
+        }
         SceneManager.LoadScene(nombreEscena);
     }
 }

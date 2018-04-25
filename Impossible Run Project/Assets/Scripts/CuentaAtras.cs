@@ -6,18 +6,15 @@ public class CuentaAtras : MonoBehaviour {
     public Text textoDerrota;
     public Text cronometro;
 
-    private float tiempo;
+    private static float tiempo;
     private bool debeDisminuir;
 
     public Button pausa;
 
-    //public int cuentaAtras;
-    //public bool auxCuentaAtras;
-
     // Use this for initialization
     public void Start()
     {
-        int auxNivel = DatosPartida.GetNivelPartida();
+        int auxNivel = int.Parse(DatosPartida.GetNivelPartida());
         //Debug.Log(auxNivel);
         switch (auxNivel)
         {
@@ -45,10 +42,8 @@ public class CuentaAtras : MonoBehaviour {
                 tiempo = 5.0f;
                 break;
         }
-        //tiempo = 20.0f;
 
         debeDisminuir = true;
-        //pausa = GameObject.Find("Button_Reanudar").GetComponent<Button>();
         textoDerrota.enabled = false;
     }
 
@@ -66,18 +61,23 @@ public class CuentaAtras : MonoBehaviour {
                 pausa.onClick.Invoke();
                 pausa.enabled = false;
                 textoDerrota.enabled = true;
+
             }
         }
 
         if (tiempo <= 0.0f)
-            {
-                cronometro.color = Color.red; // Comprueba para cambiar el color del text. 
-            }
-            else
-            {
-                cronometro.color = Color.green; // Vuelve a verde cuando aumente...
-            }
-
+        {
+            cronometro.color = Color.red; // Comprueba para cambiar el color del text. 
         }
-	
+        else
+        {
+            cronometro.color = Color.green; // Vuelve a verde cuando aumente...
+        }
+
+    }
+    
+    public static float getTiempo()
+    {
+        return tiempo;
+    }
 }

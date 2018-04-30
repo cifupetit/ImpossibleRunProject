@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using UnityEngine;
-
+﻿
 [System.Serializable]
 public static class DatosPartida {
     //primera posicion  del array nombre de jugador y segunda nivel
@@ -16,20 +14,20 @@ public static class DatosPartida {
         return resultado[0];
     }
 
-    public static void SetNivelPartida(string auxNivel)
+    public static void SetNivelPartida(int auxNivel)
     {
-        resultado[1] = auxNivel;
+        resultado[1] = auxNivel.ToString();
     }
 
-    public static string GetNivelPartida()
+    public static int GetNivelPartida()
     {
-        return resultado[1];
+        return int.Parse(resultado[1]);
     }
 
     public static void CargaDatos(string[] datos)
     {
         DatosPartida.SetNombreJPartida(datos[0]);
-        DatosPartida.SetNivelPartida(datos[1]);
+        DatosPartida.SetNivelPartida(int.Parse(datos[1]));
     }
 
     public static string[] GetResultado()

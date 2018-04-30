@@ -12,39 +12,45 @@ public class CuentaAtras : MonoBehaviour {
     public Button pausa;
 
     // Use this for initialization
-    public void Start()
+    void Start()
     {
-        int auxNivel = int.Parse(DatosPartida.GetNivelPartida());
-        //Debug.Log(auxNivel);
-        switch (auxNivel)
+        textoDerrota.enabled = false;
+        switch (DatosPartida.GetNivelPartida())
         {
             case 1:
-                tiempo = 35.0f;
+                tiempo = 40.0f;
                 break;
 
             case 2:
-                tiempo = 25.0f;
+                tiempo += 30.0f;
                 break;
 
             case 3:
-                tiempo = 20.0f;
+                tiempo += 20.0f;
                 break;
 
             case 4:
-                tiempo = 15.0f;
+                tiempo += 15.0f;
                 break;
 
             case 5:
-                tiempo = 10.0f;
+                tiempo += 10.0f;
                 break;
 
             case 6:
-                tiempo = 5.0f;
+                tiempo += 8.0f;
+                break;
+
+            case 7:
+                tiempo += 6.0f;
+                break;
+
+            default:
+                tiempo += 5.0f;
                 break;
         }
-
+        
         debeDisminuir = true;
-        textoDerrota.enabled = false;
     }
 
     // Update is called once per frame
@@ -74,6 +80,56 @@ public class CuentaAtras : MonoBehaviour {
             cronometro.color = Color.green; // Vuelve a verde cuando aumente...
         }
 
+    }
+
+    public void sumaTiempo()
+    {
+        switch (DatosPartida.GetNivelPartida())
+        {
+            case 1:
+                tiempo += 10.0f;
+                break;
+
+            case 2:
+                tiempo += 8.0f;
+                break;
+
+            case 3:
+                tiempo += 6.0f;
+                break;
+
+            case 4:
+                tiempo += 5.0f;
+                break;
+
+            case 5:
+                tiempo += 4.0f;
+                break;
+
+            case 6:
+                tiempo += 4.0f;
+                break;
+
+            case 7:
+                tiempo += 3.0f;
+                break;
+
+            case 8:
+                tiempo += 3.0f;
+                break;
+
+            case 9:
+                tiempo += 2.0f;
+                break;
+
+            case 10:
+                tiempo += 2.0f;
+                break;
+
+            default:
+                tiempo += 1.5f;
+                break;
+        }
     }
     
     public static float getTiempo()

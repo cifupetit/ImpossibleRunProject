@@ -169,7 +169,7 @@ public class MarksController : MonoBehaviour {
             this.GetComponent<BoxCollider>().enabled = false;
             this.GetComponent<Light>().enabled = false;
             markTracker++;
-            cuentaAtras.Start();
+            cuentaAtras.sumaTiempo();
             if (markTracker == 23)
             {
                 markTracker = 0;

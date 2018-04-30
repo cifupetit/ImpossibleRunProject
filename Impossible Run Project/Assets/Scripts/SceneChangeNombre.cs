@@ -12,7 +12,7 @@ public class SceneChangeNombre : MonoBehaviour {
         InputField inputFiled = inputFieldNombre.GetComponent<InputField>();
         //Debug.Log(inputFiled.text);
         DatosPartida.SetNombreJPartida(inputFiled.text);
-        DatosPartida.SetNivelPartida("1");
+        DatosPartida.SetNivelPartida(1);
 
         SceneManager.LoadScene(nombreEscena);
     }

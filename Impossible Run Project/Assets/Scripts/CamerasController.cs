@@ -4,37 +4,37 @@ using UnityEngine;
 
 public class CamerasController : MonoBehaviour {
 
-    public Camera TopCamera;
-    public Camera HoodCamera;
-    public Camera BackCamera;
+    public Camera topCamera;
+    public Camera hoodCamera;
+    public Camera backCamera;
 
     // Update is called once per frame
     void Update () {
         if (Input.GetKeyDown(KeyCode.X))
         {
-            if (TopCamera.gameObject.activeInHierarchy == true)
+            if (topCamera.gameObject.activeInHierarchy == true)
             {
-                TopCamera.gameObject.SetActive(false);
-                HoodCamera.gameObject.SetActive(true);
+                topCamera.gameObject.SetActive(false);
+                hoodCamera.gameObject.SetActive(true);
             }
             else
             {
-                TopCamera.gameObject.SetActive(true);
-                HoodCamera.gameObject.SetActive(false);
+                topCamera.gameObject.SetActive(true);
+                hoodCamera.gameObject.SetActive(false);
             }
         }
 
         if (Input.GetKeyDown(KeyCode.Z))
         {
-            TopCamera.gameObject.SetActive(false);
-            HoodCamera.gameObject.SetActive(false);
-            BackCamera.gameObject.SetActive(true);
+            topCamera.gameObject.SetActive(false);
+            hoodCamera.gameObject.SetActive(false);
+            backCamera.gameObject.SetActive(true);
         }
         else if (Input.GetKeyUp(KeyCode.Z))
         {
-            TopCamera.gameObject.SetActive(true);
-            HoodCamera.gameObject.SetActive(false);
-            BackCamera.gameObject.SetActive(false);
+            topCamera.gameObject.SetActive(true);
+            hoodCamera.gameObject.SetActive(false);
+            backCamera.gameObject.SetActive(false);
         }
     }
 }

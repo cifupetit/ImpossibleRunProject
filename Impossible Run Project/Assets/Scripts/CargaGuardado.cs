@@ -11,8 +11,8 @@ public static class CargaGuardado {
     public static void Guarda()
     {
         BinaryFormatter bf = new BinaryFormatter();
-        FileStream fs = File.Create(Application.persistentDataPath + PATHARCHIVO); //Tipo de archivo que queramos, gd (game data)
-        bf.Serialize(fs, DatosPartida.GetResultado());
+        FileStream fs = File.Create(Application.persistentDataPath + PATHARCHIVO);
+        bf.Serialize(fs, DatosPartida.GetJugador());
         fs.Close();
     }
 
@@ -22,7 +22,7 @@ public static class CargaGuardado {
         {
             BinaryFormatter bf = new BinaryFormatter();
             FileStream fs = File.Open(Application.persistentDataPath + PATHARCHIVO, FileMode.Open);
-            DatosPartida.CargaDatos((string[])bf.Deserialize(fs));
+            DatosPartida.CargaDatos((Jugador)bf.Deserialize(fs));
             fs.Close();
         }
     }

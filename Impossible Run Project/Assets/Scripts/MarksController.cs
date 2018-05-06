@@ -31,7 +31,7 @@ public class MarksController : MonoBehaviour {
     public GameObject mark21;
     public GameObject mark22;
     public GameObject mark23;
-    public int markTracker;
+    private int markTracker;
     public CuentaAtras cuentaAtras;
 
     public Text nivelJugador;
@@ -173,8 +173,8 @@ public class MarksController : MonoBehaviour {
             if (markTracker == 23)
             {
                 markTracker = 0;
-                DatosPartida.SetNivelPartida(DatosPartida.GetNivelPartida() + 1);
-                nivelJugador.text = "Nivel " + DatosPartida.GetNivelPartida().ToString();
+                DatosPartida.GetJugador().SetNivel(DatosPartida.GetJugador().GetNivel() + 1);
+                nivelJugador.text = "Nivel " + DatosPartida.GetJugador().GetNivel().ToString();
             }
             yield return new WaitForSeconds(1);
             this.GetComponent<Light>().enabled = true;

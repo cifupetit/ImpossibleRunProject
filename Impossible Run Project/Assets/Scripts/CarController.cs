@@ -13,21 +13,21 @@ public class CarController : MonoBehaviour {
     public WheelCollider ruedaTraDer;
     public WheelCollider ruedaTraIzq;
 
-    public float giroRuedas;
-    public float maxGiroRuedas;
+    private float giroRuedas;
+    private float maxGiroRuedas;
 
-    public float fuerzaMotor;
-    public float maxFuerzaMotor;
+    private float fuerzaMotor;
+    private float maxFuerzaMotor;
 
-    public float freno;
-    public float fuerzaFrenado;
-    public bool estoyFrenando;
-    public float fuerzaDerrape;
-    public bool estoyDerrapando;
+    private float freno;
+    private float fuerzaFrenado;
+    private bool estoyFrenando;
+    private float fuerzaDerrape;
+    private bool estoyDerrapando;
 
-    public Vector3 posCentroDeMasas;    //posición del centro de masas del vehículo
-    public Vector3 posicionRueda;   //tanto posición como rotación servirán para posicionar el
-    public Quaternion rotacionRueda;//GameObject que posee el WheelCollider en el centro del modelo de rueda
+    private Vector3 posCentroDeMasas;    //posición del centro de masas del vehículo
+    private Vector3 posicionRueda;   //tanto posición como rotación servirán para posicionar el
+    private Quaternion rotacionRueda;//GameObject que posee el WheelCollider en el centro del modelo de rueda
 
     public Light luzTraIzq;
     public Light luzTraDer;
@@ -180,6 +180,6 @@ public class CarController : MonoBehaviour {
         WheelFrictionCurve frictionCurveTraIzq2;
         frictionCurveTraIzq2 = ruedaTraIzq.sidewaysFriction;
         frictionCurveTraIzq2.extremumSlip = friccionLateral;
-        ruedaTraIzq.sidewaysFriction = frictionCurveTraIzq2;
+        ruedaTraIzq.sidewaysFriction = frictionCurveTraIzq2;    
     }
 }

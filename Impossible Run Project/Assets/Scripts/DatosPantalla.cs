@@ -10,9 +10,8 @@ public class DatosPantalla : MonoBehaviour {
     
 	// Use this for initialization
 	void Start () {
-		//nombreJugador = GameObject.Find("NombreJugador").GetComponent<Text>();
-        nombreJugador.text = DatosPartida.GetNombreJPartida();
-        nivelJugador.text = "Nivel " + DatosPartida.GetNivelPartida().ToString();
+        nombreJugador.text = DatosPartida.GetJugador().GetNombre();
+        nivelJugador.text = "Nivel " + DatosPartida.GetJugador().GetNivel().ToString();
     }
 	
 }

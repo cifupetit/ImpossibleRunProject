@@ -15,7 +15,7 @@ public class CuentaAtras : MonoBehaviour {
     void Start()
     {
         textoDerrota.enabled = false;
-        switch (DatosPartida.GetNivelPartida())
+        switch (DatosPartida.GetJugador().GetNivel())
         {
             case 1:
                 tiempo = 40.0f;
@@ -84,7 +84,7 @@ public class CuentaAtras : MonoBehaviour {
 
     public void sumaTiempo()
     {
-        switch (DatosPartida.GetNivelPartida())
+        switch (DatosPartida.GetJugador().GetNivel())
         {
             case 1:
                 tiempo += 10.0f;

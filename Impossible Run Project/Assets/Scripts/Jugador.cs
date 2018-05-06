@@ -1,4 +1,5 @@
 ﻿
+[System.Serializable]
 public class Jugador {
 
     private string nombre;
@@ -10,22 +11,22 @@ public class Jugador {
         this.nivel = nivel;
     }
 
-    public void setNombre(string nombre)
+    public void SetNombre(string nombre)
     {
         this.nombre = nombre;
     }
 
-    public string getNombre()
+    public string GetNombre()
     {
         return this.nombre;
     }
 
-    public void setNivel(int nivel)
+    public void SetNivel(int nivel)
     {
         this.nivel = nivel;
     }
 
-    public int getNivel()
+    public int GetNivel()
     {
         return this.nivel;
     }

@@ -1,37 +1,21 @@
 ﻿
 [System.Serializable]
 public static class DatosPartida {
-    //primera posicion  del array nombre de jugador y segunda nivel
-    private static string[] resultado = new string[2];
+    
+    private static Jugador datosJugador;
 
-    public static void SetNombreJPartida(string nombre)
+    public static void CargaDatos(Jugador datos)
     {
-        resultado[0] = nombre;
+        datosJugador = datos;
     }
 
-    public static string GetNombreJPartida()
+    public static Jugador GetJugador()
     {
-        return resultado[0];
+        return datosJugador;
     }
 
-    public static void SetNivelPartida(int auxNivel)
+    public static void SetJugador(Jugador jugador)
     {
-        resultado[1] = auxNivel.ToString();
-    }
-
-    public static int GetNivelPartida()
-    {
-        return int.Parse(resultado[1]);
-    }
-
-    public static void CargaDatos(string[] datos)
-    {
-        DatosPartida.SetNombreJPartida(datos[0]);
-        DatosPartida.SetNivelPartida(int.Parse(datos[1]));
-    }
-
-    public static string[] GetResultado()
-    {
-        return resultado;
+        datosJugador = jugador;
     }
 }

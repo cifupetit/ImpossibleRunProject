@@ -10,15 +10,16 @@ public class ControlDatosPartida : MonoBehaviour {
     // Use this for initialization
     void Start()
     {
-        if (DatosPartida.GetResultado() == null)
+        CargaGuardado.Carga();
+        if (DatosPartida.GetJugador() == null)
         {
             botonContinuar.enabled = false;
         }
     }
 
-    public void GuardaDatosCierraApp ()
+    public void GuardaDatosCierraApp()
     {
-        if (DatosPartida.GetNombreJPartida() != null) //para evitar machacar los datos del archivo si no llega a cargar la partida o crear una nueva antes de salir
+        if (DatosPartida.GetJugador() != null) //para evitar machacar los datos del archivo si no llega a cargar la partida o crear una nueva antes de salir
         {
             CargaGuardado.Guarda();
         }

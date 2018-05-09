@@ -24,7 +24,6 @@ public class SceneChangeNombre : MonoBehaviour {
 
     public void CargaEscenaNombre(string nombreEscena)
     {
-        //Debug.Log(inputFieldNombre.GetComponent<InputField>().text);
         DatosPartida.SetJugador(new Jugador(inputFieldNombre.GetComponent<InputField>().text, 1));
 
         SceneManager.LoadScene(nombreEscena);

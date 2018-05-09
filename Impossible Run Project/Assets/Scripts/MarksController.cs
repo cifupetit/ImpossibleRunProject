@@ -131,12 +131,10 @@ public class MarksController : MonoBehaviour {
                 break;
 
             case 17:
-                //lastMarker.transform.position = mark17.transform.position;
                 theMarker.transform.position = mark18.transform.position;
                 break;
 
             case 18:
-                //lastMarker.transform.position = mark18.transform.position;
                 theMarker.transform.position = mark19.transform.position;
                 break;
 

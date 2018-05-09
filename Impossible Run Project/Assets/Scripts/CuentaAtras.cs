@@ -77,7 +77,7 @@ public class CuentaAtras : MonoBehaviour {
         }
         else
         {
-            cronometro.color = Color.green; // Vuelve a verde cuando aumente...
+            cronometro.color = Color.green; // Vuelve a verde cuando aumente.
         }
 
     }

@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class RotacionCamaraMenu : MonoBehaviour {
+public class EfectoRotacion : MonoBehaviour {
     
 	// Update is called once per frame
 	void Update () {

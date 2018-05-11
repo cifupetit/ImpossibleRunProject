@@ -22,31 +22,31 @@ public class CuentaAtras : MonoBehaviour {
                 break;
 
             case 2:
-                tiempo += 30.0f;
+                tiempo = 30.0f;
                 break;
 
             case 3:
-                tiempo += 20.0f;
+                tiempo = 20.0f;
                 break;
 
             case 4:
-                tiempo += 15.0f;
+                tiempo = 15.0f;
                 break;
 
             case 5:
-                tiempo += 10.0f;
+                tiempo = 10.0f;
                 break;
 
             case 6:
-                tiempo += 8.0f;
+                tiempo = 8.0f;
                 break;
 
             case 7:
-                tiempo += 6.0f;
+                tiempo = 6.0f;
                 break;
 
             default:
-                tiempo += 5.0f;
+                tiempo = 5.0f;
                 break;
         }
         
